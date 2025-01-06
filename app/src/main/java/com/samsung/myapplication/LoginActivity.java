@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.samsung.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;

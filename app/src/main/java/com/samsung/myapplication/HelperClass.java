@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.samsung.myapplication;
 
 public class HelperClass {
     String name, email, username, password;

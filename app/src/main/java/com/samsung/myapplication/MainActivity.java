@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.samsung.myapplication;
 
 import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
