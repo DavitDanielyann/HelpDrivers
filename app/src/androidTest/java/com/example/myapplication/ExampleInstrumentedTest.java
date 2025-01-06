@@ -1,4 +1,4 @@
-package com.samsung.myapplication;
+package com.example.myapplication;
 
 import android.content.Context;
 

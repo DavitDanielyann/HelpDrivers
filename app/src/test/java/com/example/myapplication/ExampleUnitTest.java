@@ -1,4 +1,4 @@
-package com.samsung.myapplication;
+package com.example.myapplication;
 
 import org.junit.Test;
 
