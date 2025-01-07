@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "17725972478",
-    "project_id": "help-drivers-fa2d5",
-    "storage_bucket": "help-drivers-fa2d5.firebasestorage.app"
+    "project_number": "152899773047",
+    "project_id": "my-application-42926",
+    "storage_bucket": "my-application-42926.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:17725972478:android:41c208d46467506f65aaaf",
+        "mobilesdk_app_id": "1:152899773047:android:d0606e8d345798eaa05c72",
         "android_client_info": {
-          "package_name": "com.example.myapplication"
+          "package_name": "ru.samsung.myapp"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB_odGrOCpH4ARQBcd-E9mJ-zx0NFoLv_A"
+          "current_key": "AIzaSyD9zRr9a1DL2GhnQa1y4nH5GTGmrBaN5eE"
         }
       ],
       "services": {

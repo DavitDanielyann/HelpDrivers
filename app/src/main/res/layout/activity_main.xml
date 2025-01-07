@@ -24,7 +24,7 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
+        android:layout_marginLeft="55dp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="10dp"
         android:text="Technical inspection of the car" />
@@ -59,6 +59,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:text="Car property tax" />
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
