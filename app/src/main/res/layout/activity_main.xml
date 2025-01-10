@@ -1,75 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/car"
-    android:orientation="vertical"
+    android:background="@color/lavender"
     tools:context=".MainActivity">
 
-    <TextView
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frame_layout"/>
+    <com.google.android.material.bottomappbar.BottomAppBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select the button you want to know about."
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="20dp"/>
+        android:id="@+id/bottomAppBar"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="50dp">
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="10dp"
-        android:text="Technical inspection of the car" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="245dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="80dp"
-        android:text=" Car oil " />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="245dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="80dp"
-        android:text="Car tires"/>
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="245dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="80dp"
-        android:text="Car battery" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="245dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:text="Car property tax" />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomNavigationView"
+            android:layout_marginEnd="20dp"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_menu"/>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Created by Davit Danielyan"
-        android:textStyle="bold"
-        android:textColor="@color/grey"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="290dp" />
+    </com.google.android.material.bottomappbar.BottomAppBar>
 
 
 
-</LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
