@@ -9,10 +9,18 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="About"
         android:gravity="center"
         android:textSize="30sp"
         android:textColor="@color/white"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Using the app, you can mark everything that you did with your car: changed the oil, passed the inspection, etc. The app will send you timely reminders on when these and other actions need to be performed again in order to secure the car and avoid fines."
+        android:textSize="23sp"
+        android:paddingTop="46dp"
+        android:textStyle="bold"/>
+
 
 </FrameLayout>
