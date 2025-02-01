@@ -17,7 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SignupActivity extends AppCompatActivity {
-    EditText signupName, signupUsername, signupEmail, signupPassword;
+    EditText signupName, signupUsername, signupEmail, signupPassword, signupConfirmPassword;
     TextView loginRedirectText;
     Button signupButton;
     FirebaseDatabase database;
@@ -33,6 +33,7 @@ public class SignupActivity extends AppCompatActivity {
         signupEmail = findViewById(R.id.signup_email);
         signupUsername = findViewById(R.id.signup_username);
         signupPassword = findViewById(R.id.signup_password);
+        signupConfirmPassword = findViewById(R.id.signup_confirm_password);  // Add this line
         loginRedirectText = findViewById(R.id.loginRedirectText);
         signupButton = findViewById(R.id.signup_button);
         sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
@@ -44,8 +45,9 @@ public class SignupActivity extends AppCompatActivity {
                 String email = signupEmail.getText().toString();
                 String username = signupUsername.getText().toString();
                 String password = signupPassword.getText().toString();
+                String confirmPassword = signupConfirmPassword.getText().toString();  // Get confirm password
 
-                if (validateInputs(name, email, username, password)) {
+                if (validateInputs(name, email, username, password, confirmPassword)) {
                     saveUserData(username, password);
                     saveUserToFirebase(name, email, username, password);
                     Toast.makeText(SignupActivity.this, "Signup successful!", Toast.LENGTH_SHORT).show();
@@ -65,8 +67,8 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
-    private boolean validateInputs(String name, String email, String username, String password) {
-        if (name.isEmpty() || username.isEmpty() || email.isEmpty() || password.isEmpty()) {
+    private boolean validateInputs(String name, String email, String username, String password, String confirmPassword) {
+        if (name.isEmpty() || username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             Toast.makeText(this, "All fields are required!", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -80,6 +82,12 @@ public class SignupActivity extends AppCompatActivity {
         if (!isValidPassword(password)) {
             signupPassword.setError("Password must have at least 8 characters, a capital letter, a small letter, a number, and a special character!");
             signupPassword.requestFocus();
+            return false;
+        }
+
+        if (!password.equals(confirmPassword)) {
+            signupConfirmPassword.setError("Passwords do not match!");
+            signupConfirmPassword.requestFocus();
             return false;
         }
 

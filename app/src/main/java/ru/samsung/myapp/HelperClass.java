@@ -4,7 +4,7 @@ public class HelperClass {
     String name, email, username, password;
 
     public HelperClass() {
-        // Default constructor required for calls to DataSnapshot.getValue(HelperClass.class)
+        // Default constructor required for Firebase
     }
 
     public HelperClass(String name, String email, String username, String password) {
