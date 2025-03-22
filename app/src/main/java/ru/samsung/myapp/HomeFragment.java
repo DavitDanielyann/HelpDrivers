@@ -1,20 +1,32 @@
 package ru.samsung.myapp;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.Button;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 public class HomeFragment extends Fragment {
 
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        // Find the Expense History button by ID
+        Button expenseButton = view.findViewById(R.id.Expense_button);
+
+        // Set click listener to navigate to ExpenseHistoryActivity
+        expenseButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ExpenseHistoryActivity.class);
+            startActivity(intent);
+        });
+
+        return view;
     }
 }

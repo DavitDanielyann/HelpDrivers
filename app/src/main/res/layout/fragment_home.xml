@@ -3,16 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/lavender"
     tools:context=".HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="@color/white"/>
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="Reminder"
+        android:textAllCaps="false"
+        android:layout_marginLeft="60dp"
+        android:id="@+id/Reminder_button"
+        android:textSize="18sp"
+        android:layout_marginTop="270dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/teal_700"
+        app:cornerRadius="20dp"/>
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="Expense history"
+        android:textAllCaps="false"
+        android:layout_marginLeft="60dp"
+        android:id="@+id/Expense_button"
+        android:textSize="18sp"
+        android:layout_marginTop="350dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/teal_700"
+        app:cornerRadius="20dp"/>
+
 
 </FrameLayout>

@@ -9,10 +9,52 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="Help"
         android:gravity="center"
         android:textSize="30sp"
-        android:textColor="@color/white"/>
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Expense history:"
+        android:textSize="23sp"
+        android:paddingTop="46dp"
+        android:textColor="@color/red"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="With this button, you will be able to indicate each month how much you spent on your car in that month, and during the year you can see how much money you spent on your car in total that year."
+        android:textSize="20sp"
+        android:paddingTop="46dp"
+        android:paddingLeft="180dp"
+        android:textColor="@color/black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reminder: "
+        android:textSize="23sp"
+        android:paddingTop="280dp"
+        android:textColor="@color/red"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="By clicking this button, you will be able to indicate on the opened page when you last performed any action with your car, for example, changing the car oil, having a technical inspection, paying property taxes, etc. The program will send you a reminder about the next time you need to perform the specified action again to avoid violations or car malfunctions."
+        android:textSize="20sp"
+        android:paddingTop="280dp"
+        android:paddingLeft="120dp"
+        android:textColor="@color/black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="630dp"
+        android:text="I wish you success and may the app serve your purpose!"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textColor="@color/teal_700"
+        android:textStyle="bold"/>
 
 </FrameLayout>
