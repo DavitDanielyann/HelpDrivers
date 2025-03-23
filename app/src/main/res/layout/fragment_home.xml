@@ -11,7 +11,7 @@
     <Button
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:text="Reminder"
+        android:text="Expense history"
         android:textAllCaps="false"
         android:layout_marginLeft="60dp"
         android:id="@+id/Reminder_button"
@@ -23,7 +23,7 @@
     <Button
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:text="Expense history"
+        android:text="Reminder"
         android:textAllCaps="false"
         android:layout_marginLeft="60dp"
         android:id="@+id/Expense_button"
