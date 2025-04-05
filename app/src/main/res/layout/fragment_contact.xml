@@ -58,5 +58,15 @@
         android:layout_marginTop="30dp"
         android:backgroundTint="@color/black"
         app:cornerRadius="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log out"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:paddingLeft="250dp"
+        android:paddingTop="30dp"
+        android:textSize="25dp"
+        android:id="@+id/logout"/>
 
 </LinearLayout>

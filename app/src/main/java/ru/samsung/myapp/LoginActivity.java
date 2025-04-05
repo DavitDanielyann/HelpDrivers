@@ -1,5 +1,6 @@
 package ru.samsung.myapp;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,9 +22,11 @@ public class LoginActivity extends AppCompatActivity {
     EditText login_username, login_password;
     Button login_button;
     TextView signupRedirectText;
+    TextView guest;
     FirebaseDatabase database;
     DatabaseReference reference;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         login_password = findViewById(R.id.login_password);
         login_button = findViewById(R.id.login_button);
         signupRedirectText = findViewById(R.id.signupRedirectText);
+        guest = findViewById(R.id.guest);
 
         // When the login button is clicked
         login_button.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +89,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        guest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
