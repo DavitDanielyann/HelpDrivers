@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <string-array name="months_array">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <color name="black">#FF000000</color>
+    <color name="grey">#c3c7c4</color>
+    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="lavender">#8692f7</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="red">#eb1519</color>
+    <color name="teal_200">#2c9dbf</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">My app</string>
+    <string name="gcm_defaultSenderId" translatable="false">699243654945</string>
+    <string name="google_api_key" translatable="false">AIzaSyDTitWKaIoszT5nB4ETy8lPzBe897VyjJI</string>
+    <string name="google_app_id" translatable="false">1:699243654945:android:8a8a541953d7e7f2929860</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDTitWKaIoszT5nB4ETy8lPzBe897VyjJI</string>
+    <string name="google_storage_bucket" translatable="false">helpdrivers-add28.firebasestorage.app</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="project_id" translatable="false">helpdrivers-add28</string>
+    <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.MyApplication" parent="Base.Theme.MyApplication"/>
+    <style name="Theme.Myapp" parent="Theme.MaterialComponents.DayNight.NoActionBar" ns1:ignore="DuplicateDefinition">
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+    </style>
+</resources>

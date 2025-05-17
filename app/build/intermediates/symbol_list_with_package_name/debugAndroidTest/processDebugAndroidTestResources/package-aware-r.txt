@@ -1,0 +1,3 @@
+ru.samsung.myapp.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

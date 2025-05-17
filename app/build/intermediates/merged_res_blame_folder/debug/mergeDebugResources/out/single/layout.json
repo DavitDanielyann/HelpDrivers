@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "ru.samsung.myapp-mergeDebugResources-35:/layout/activity_oil.xml",
+        "source": "ru.samsung.myapp-main-38:/layout/activity_oil.xml"
+    },
+    {
+        "merged": "ru.samsung.myapp-mergeDebugResources-35:/layout/fragment_home.xml",
+        "source": "ru.samsung.myapp-main-38:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "ru.samsung.myapp-mergeDebugResources-35:/layout/activity_inspection.xml",
+        "source": "ru.samsung.myapp-main-38:/layout/activity_inspection.xml"
+    },
+    {
+        "merged": "ru.samsung.myapp-mergeDebugResources-35:/layout/fragment_contact.xml",
+        "source": "ru.samsung.myapp-main-38:/layout/fragment_contact.xml"
+    },
+    {
+        "merged": "ru.samsung.myapp-mergeDebugResources-35:/layout/activity_accumlator.xml",
+        "source": "ru.samsung.myapp-main-38:/layout/activity_accumlator.xml"
+    },
+    {
+        "merged": "ru.samsung.myapp-mergeDebugResources-35:/layout/activity_appa.xml",
+        "source": "ru.samsung.myapp-main-38:/layout/activity_appa.xml"
+    },
+    {
+        "merged": "ru.samsung.myapp-mergeDebugResources-35:/layout/activity_login.xml",
+        "source": "ru.samsung.myapp-main-38:/layout/activity_login.xml"
+    },
+    {
+        "merged": "ru.samsung.myapp-mergeDebugResources-35:/layout/fragment_help.xml",
+        "source": "ru.samsung.myapp-main-38:/layout/fragment_help.xml"
+    },
+    {
+        "merged": "ru.samsung.myapp-mergeDebugResources-35:/layout/activity_signup.xml",
+        "source": "ru.samsung.myapp-main-38:/layout/activity_signup.xml"
+    },
+    {
+        "merged": "ru.samsung.myapp-mergeDebugResources-35:/layout/activity_expense_history.xml",
+        "source": "ru.samsung.myapp-main-38:/layout/activity_expense_history.xml"
+    },
+    {
+        "merged": "ru.samsung.myapp-mergeDebugResources-35:/layout/activity_tires.xml",
+        "source": "ru.samsung.myapp-main-38:/layout/activity_tires.xml"
+    },
+    {
+        "merged": "ru.samsung.myapp-mergeDebugResources-35:/layout/activity_main.xml",
+        "source": "ru.samsung.myapp-main-38:/layout/activity_main.xml"
+    },
+    {
+        "merged": "ru.samsung.myapp-mergeDebugResources-35:/layout/fragment_about.xml",
+        "source": "ru.samsung.myapp-main-38:/layout/fragment_about.xml"
+    },
+    {
+        "merged": "ru.samsung.myapp-mergeDebugResources-35:/layout/activity_tax.xml",
+        "source": "ru.samsung.myapp-main-38:/layout/activity_tax.xml"
+    },
+    {
+        "merged": "ru.samsung.myapp-mergeDebugResources-35:/layout/activity_expense_history1.xml",
+        "source": "ru.samsung.myapp-main-38:/layout/activity_expense_history1.xml"
+    }
+]

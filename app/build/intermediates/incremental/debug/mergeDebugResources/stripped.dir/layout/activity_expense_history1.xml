@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lavender"
+    android:padding="20dp"
+    tools:context=".ExpenseHistoryActivity1">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Expense History"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Spinner -->
+    <Spinner
+        android:id="@+id/monthSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/months_array"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/descriptionEditText"
+        app:layout_constraintHorizontal_chainStyle="spread" />
+
+    <!-- Description EditText -->
+    <EditText
+        android:id="@+id/descriptionEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Description"
+        android:inputType="text"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="@id/monthSpinner"
+        app:layout_constraintStart_toEndOf="@id/monthSpinner"
+        app:layout_constraintEnd_toStartOf="@id/priceEditText" />
+
+    <!-- Price EditText -->
+    <EditText
+        android:id="@+id/priceEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Price"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="@id/monthSpinner"
+        app:layout_constraintStart_toEndOf="@id/descriptionEditText"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Add New Expense Button -->
+    <TextView
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Add New Expense"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textColor="@color/purple_700"
+        app:layout_constraintTop_toBottomOf="@+id/priceEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Dynamic Rows Container -->
+    <TableLayout
+        android:id="@+id/expenseTable"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:stretchColumns="*"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/addButton"
+        app:layout_constraintBottom_toTopOf="@+id/saveButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/black"
+        android:text="Save All Expenses"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/expenseTable"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cornerRadius="20dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

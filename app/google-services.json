@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "152899773047",
-    "project_id": "my-application-42926",
-    "storage_bucket": "my-application-42926.firebasestorage.app"
+    "project_number": "699243654945",
+    "project_id": "helpdrivers-add28",
+    "storage_bucket": "helpdrivers-add28.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:152899773047:android:d0606e8d345798eaa05c72",
+        "mobilesdk_app_id": "1:699243654945:android:8a8a541953d7e7f2929860",
         "android_client_info": {
           "package_name": "ru.samsung.myapp"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD9zRr9a1DL2GhnQa1y4nH5GTGmrBaN5eE"
+          "current_key": "AIzaSyDTitWKaIoszT5nB4ETy8lPzBe897VyjJI"
         }
       ],
       "services": {

@@ -10,9 +10,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ProgressBar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -23,6 +30,8 @@ public class SignupActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference reference;
     SharedPreferences sharedPreferences;
+    private FirebaseAuth mAuth;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +42,14 @@ public class SignupActivity extends AppCompatActivity {
         signupEmail = findViewById(R.id.signup_email);
         signupUsername = findViewById(R.id.signup_username);
         signupPassword = findViewById(R.id.signup_password);
-        signupConfirmPassword = findViewById(R.id.signup_confirm_password);  // Add this line
+        signupConfirmPassword = findViewById(R.id.signup_confirm_password);
         loginRedirectText = findViewById(R.id.loginRedirectText);
         signupButton = findViewById(R.id.signup_button);
+        progressBar = findViewById(R.id.progressBar);
+        
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
+        
         sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
 
         signupButton.setOnClickListener(new View.OnClickListener() {
@@ -45,15 +59,11 @@ public class SignupActivity extends AppCompatActivity {
                 String email = signupEmail.getText().toString();
                 String username = signupUsername.getText().toString();
                 String password = signupPassword.getText().toString();
-                String confirmPassword = signupConfirmPassword.getText().toString();  // Get confirm password
+                String confirmPassword = signupConfirmPassword.getText().toString();
 
                 if (validateInputs(name, email, username, password, confirmPassword)) {
-                    saveUserData(username, password);
-                    saveUserToFirebase(name, email, username, password);
-                    Toast.makeText(SignupActivity.this, "Signup successful!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-                    startActivity(intent);
-                    finish();
+                    progressBar.setVisibility(View.VISIBLE);
+                    registerUser(name, email, username, password);
                 }
             }
         });
@@ -63,6 +73,7 @@ public class SignupActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -107,6 +118,62 @@ public class SignupActivity extends AppCompatActivity {
         editor.putString("username", username);
         editor.putString("password", password);
         editor.apply();
+    }
+
+    private void registerUser(final String name, final String email, final String username, final String password) {
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            
+                            // Send verification email
+                            sendVerificationEmail(user);
+                            
+                            // Save user to Firebase Realtime Database
+                            saveUserToFirebase(name, email, username, password);
+                            
+                            // Save local user data
+                            saveUserData(username, password);
+                            
+                            progressBar.setVisibility(View.GONE);
+                            Toast.makeText(SignupActivity.this, "Registration successful! Please check your email for verification.", 
+                                    Toast.LENGTH_LONG).show();
+                            
+                            // Return to login screen
+                            Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            progressBar.setVisibility(View.GONE);
+                            Toast.makeText(SignupActivity.this, "Registration failed: " + task.getException().getMessage(),
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+    
+    private void sendVerificationEmail(FirebaseUser user) {
+        if (user != null) {
+            user.sendEmailVerification()
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(SignupActivity.this, 
+                                        "Verification email sent to " + user.getEmail(), 
+                                        Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(SignupActivity.this,
+                                        "Failed to send verification email: " + task.getException().getMessage(),
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+        }
     }
 
     private void saveUserToFirebase(String name, String email, String username, String password) {
