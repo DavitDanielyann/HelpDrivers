@@ -1,4 +1,4 @@
-package ru.samsung.myapp;
+/*package ru.samsung.myapp;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -73,4 +73,4 @@ public class ExpenseHistoryActivity extends AppCompatActivity {
             }
         });
     }
-}
+}*/

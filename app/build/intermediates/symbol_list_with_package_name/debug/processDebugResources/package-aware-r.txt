@@ -3167,6 +3167,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable pagebkg
+drawable quiz
 drawable rounded_button
 drawable test_level_drawable
 drawable tooltip_frame_dark
@@ -3175,11 +3176,9 @@ id ALT
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
-id Expense_button
 id FUNCTION
 id META
 id NO_DEBUG
-id Reminder_button
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -3288,6 +3287,12 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btnArmenia
+id btnGeneral
+id btnGoHome
+id btnLearn
+id btnProgramming
+id btnReview
 id btnSave
 id buttonPanel
 id cache_measures
@@ -3446,6 +3451,7 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id learnLayout
 id left
 id leftToRight
 id legacy
@@ -3457,8 +3463,8 @@ id listMode
 id list_item
 id loginRedirectText
 id login_button
+id login_email
 id login_password
-id login_username
 id logout
 id m3_side_sheet
 id main
@@ -3558,6 +3564,10 @@ id open_search_view_search_prefix
 id open_search_view_status_bar_spacer
 id open_search_view_toolbar
 id open_search_view_toolbar_container
+id option1
+id option2
+id option3
+id option4
 id outline
 id outward
 id overshoot
@@ -3580,12 +3590,14 @@ id priceEditText
 id progressBar
 id progress_circular
 id progress_horizontal
+id questionText
 id radio
 id ratio
 id rectangles
 id reminderDescriptionText
 id reminderText
 id report_drawn
+id resultText
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3695,6 +3707,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timerText
 id title
 id titleDividerNoCustom
 id titleText
@@ -3859,9 +3872,12 @@ layout activity_appa
 layout activity_expense_history
 layout activity_expense_history1
 layout activity_inspection
+layout activity_learn
 layout activity_login
 layout activity_main
 layout activity_oil
+layout activity_quiz
+layout activity_result
 layout activity_signup
 layout activity_tax
 layout activity_tires

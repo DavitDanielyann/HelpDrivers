@@ -25,7 +25,7 @@
     <color name="teal_200">#2c9dbf</color>
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
-    <string name="app_name">My app</string>
+    <string name="app_name">Quiz Zone</string>
     <string name="gcm_defaultSenderId" translatable="false">699243654945</string>
     <string name="google_api_key" translatable="false">AIzaSyDTitWKaIoszT5nB4ETy8lPzBe897VyjJI</string>
     <string name="google_app_id" translatable="false">1:699243654945:android:8a8a541953d7e7f2929860</string>

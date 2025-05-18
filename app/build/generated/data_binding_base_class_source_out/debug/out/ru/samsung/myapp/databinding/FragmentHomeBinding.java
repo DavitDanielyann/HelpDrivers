@@ -5,9 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import java.lang.NullPointerException;
@@ -17,24 +17,32 @@ import ru.samsung.myapp.R;
 
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
-  public final Button ExpenseButton;
+  public final Button btnArmenia;
 
   @NonNull
-  public final Button ReminderButton;
+  public final Button btnGeneral;
 
-  private FragmentHomeBinding(@NonNull ConstraintLayout rootView, @NonNull Button ExpenseButton,
-      @NonNull Button ReminderButton) {
+  @NonNull
+  public final Button btnLearn;
+
+  @NonNull
+  public final Button btnProgramming;
+
+  private FragmentHomeBinding(@NonNull LinearLayout rootView, @NonNull Button btnArmenia,
+      @NonNull Button btnGeneral, @NonNull Button btnLearn, @NonNull Button btnProgramming) {
     this.rootView = rootView;
-    this.ExpenseButton = ExpenseButton;
-    this.ReminderButton = ReminderButton;
+    this.btnArmenia = btnArmenia;
+    this.btnGeneral = btnGeneral;
+    this.btnLearn = btnLearn;
+    this.btnProgramming = btnProgramming;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -59,19 +67,32 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.Expense_button;
-      Button ExpenseButton = ViewBindings.findChildViewById(rootView, id);
-      if (ExpenseButton == null) {
+      id = R.id.btnArmenia;
+      Button btnArmenia = ViewBindings.findChildViewById(rootView, id);
+      if (btnArmenia == null) {
         break missingId;
       }
 
-      id = R.id.Reminder_button;
-      Button ReminderButton = ViewBindings.findChildViewById(rootView, id);
-      if (ReminderButton == null) {
+      id = R.id.btnGeneral;
+      Button btnGeneral = ViewBindings.findChildViewById(rootView, id);
+      if (btnGeneral == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ConstraintLayout) rootView, ExpenseButton, ReminderButton);
+      id = R.id.btnLearn;
+      Button btnLearn = ViewBindings.findChildViewById(rootView, id);
+      if (btnLearn == null) {
+        break missingId;
+      }
+
+      id = R.id.btnProgramming;
+      Button btnProgramming = ViewBindings.findChildViewById(rootView, id);
+      if (btnProgramming == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((LinearLayout) rootView, btnArmenia, btnGeneral, btnLearn,
+          btnProgramming);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

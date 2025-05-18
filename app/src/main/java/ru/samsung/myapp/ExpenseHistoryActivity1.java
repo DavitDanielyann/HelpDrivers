@@ -1,4 +1,4 @@
-package ru.samsung.myapp;
+/*package ru.samsung.myapp;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -159,4 +159,4 @@ public class ExpenseHistoryActivity1 extends AppCompatActivity {
             this.price = price;
         }
     }
-}
+}*/

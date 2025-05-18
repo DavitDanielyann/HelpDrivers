@@ -3166,6 +3166,7 @@ int drawable notification_template_icon_low_bg 0x7f0800fd
 int drawable notification_tile_bg 0x7f0800fe
 int drawable notify_panel_notification_icon_bg 0x7f0800ff
 int drawable pagebkg 0x7f080100
+int drawable quiz 0x7f080105
 int drawable rounded_button 0x7f080101
 int drawable test_level_drawable 0x7f080102
 int drawable tooltip_frame_dark 0x7f080103
@@ -3174,11 +3175,9 @@ int id ALT 0x7f090000
 int id BOTTOM_END 0x7f090001
 int id BOTTOM_START 0x7f090002
 int id CTRL 0x7f090003
-int id Expense_button 0x7f090004
 int id FUNCTION 0x7f090005
 int id META 0x7f090006
 int id NO_DEBUG 0x7f090007
-int id Reminder_button 0x7f090008
 int id SHIFT 0x7f090009
 int id SHOW_ALL 0x7f09000a
 int id SHOW_PATH 0x7f09000b
@@ -3287,6 +3286,12 @@ int id browser_actions_menu_item_icon 0x7f090071
 int id browser_actions_menu_item_text 0x7f090072
 int id browser_actions_menu_items 0x7f090073
 int id browser_actions_menu_view 0x7f090074
+int id btnArmenia 0x7f090239
+int id btnGeneral 0x7f09023a
+int id btnGoHome 0x7f090244
+int id btnLearn 0x7f09023b
+int id btnProgramming 0x7f09023c
+int id btnReview 0x7f090245
 int id btnSave 0x7f090075
 int id buttonPanel 0x7f090076
 int id cache_measures 0x7f090077
@@ -3445,6 +3450,7 @@ int id jumpToEnd 0x7f09010f
 int id jumpToStart 0x7f090110
 int id labeled 0x7f090111
 int id layout 0x7f090112
+int id learnLayout 0x7f090246
 int id left 0x7f090113
 int id leftToRight 0x7f090114
 int id legacy 0x7f090115
@@ -3456,8 +3462,8 @@ int id listMode 0x7f09011a
 int id list_item 0x7f09011b
 int id loginRedirectText 0x7f09011c
 int id login_button 0x7f09011d
+int id login_email 0x7f090238
 int id login_password 0x7f09011e
-int id login_username 0x7f09011f
 int id logout 0x7f090120
 int id m3_side_sheet 0x7f090121
 int id main 0x7f090122
@@ -3557,6 +3563,10 @@ int id open_search_view_search_prefix 0x7f09017f
 int id open_search_view_status_bar_spacer 0x7f090180
 int id open_search_view_toolbar 0x7f090181
 int id open_search_view_toolbar_container 0x7f090182
+int id option1 0x7f09023e
+int id option2 0x7f09023f
+int id option3 0x7f090240
+int id option4 0x7f090241
 int id outline 0x7f090183
 int id outward 0x7f090184
 int id overshoot 0x7f090185
@@ -3579,12 +3589,14 @@ int id priceEditText 0x7f090195
 int id progressBar 0x7f090196
 int id progress_circular 0x7f090197
 int id progress_horizontal 0x7f090198
+int id questionText 0x7f090242
 int id radio 0x7f090199
 int id ratio 0x7f09019a
 int id rectangles 0x7f09019b
 int id reminderDescriptionText 0x7f09019c
 int id reminderText 0x7f09019d
 int id report_drawn 0x7f09019e
+int id resultText 0x7f090247
 int id reverseSawtooth 0x7f09019f
 int id right 0x7f0901a0
 int id rightToLeft 0x7f0901a1
@@ -3694,6 +3706,7 @@ int id textinput_placeholder 0x7f090208
 int id textinput_prefix_text 0x7f090209
 int id textinput_suffix_text 0x7f09020a
 int id time 0x7f09020b
+int id timerText 0x7f090243
 int id title 0x7f09020c
 int id titleDividerNoCustom 0x7f09020d
 int id titleText 0x7f09020e
@@ -3858,9 +3871,12 @@ int layout activity_appa 0x7f0c001d
 int layout activity_expense_history 0x7f0c001e
 int layout activity_expense_history1 0x7f0c001f
 int layout activity_inspection 0x7f0c0020
+int layout activity_learn 0x7f0c007c
 int layout activity_login 0x7f0c0021
 int layout activity_main 0x7f0c0022
 int layout activity_oil 0x7f0c0023
+int layout activity_quiz 0x7f0c007d
+int layout activity_result 0x7f0c007e
 int layout activity_signup 0x7f0c0024
 int layout activity_tax 0x7f0c0025
 int layout activity_tires 0x7f0c0026

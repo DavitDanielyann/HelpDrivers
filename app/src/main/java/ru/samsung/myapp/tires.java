@@ -1,4 +1,4 @@
-package ru.samsung.myapp;
+/*package ru.samsung.myapp;
 
 
 import android.annotation.SuppressLint;
@@ -81,4 +81,4 @@ public class tires extends AppCompatActivity {
 
     }
 
-}
+}*/

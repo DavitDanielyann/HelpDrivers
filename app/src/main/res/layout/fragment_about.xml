@@ -29,7 +29,7 @@
         android:paddingStart="16dp"
         android:paddingTop="46dp"
         android:paddingEnd="16dp"
-        android:text="Using the app, you can mark everything that you did with your car: changed the oil, passed the inspection, etc. The app will send you timely reminders on when these and other actions need to be performed again in order to secure the car and avoid fines."
+        android:text="In the app, you will be able to take quizzes on 3 different topics, and at the end, learn what you didn't know."
         android:textColor="@color/black"
         android:textSize="23sp"
         android:textStyle="bold"

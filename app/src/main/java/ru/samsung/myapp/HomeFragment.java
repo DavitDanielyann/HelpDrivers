@@ -1,3 +1,4 @@
+// HomeFragment.java
 package ru.samsung.myapp;
 
 import android.content.Intent;
@@ -10,33 +11,31 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import ru.samsung.myapp.R;
+
 public class HomeFragment extends Fragment {
-    Button Expensebutton;
+
     @Nullable
     @Override
-
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        // Find the Expense History button by ID
-        Button reminderButton = view.findViewById(R.id.Reminder_button);
+        Button btnArmenia = view.findViewById(R.id.btnArmenia);
+        Button btnProgramming = view.findViewById(R.id.btnProgramming);
+        Button btnGeneral = view.findViewById(R.id.btnGeneral);
+        Button btnLearn = view.findViewById(R.id.btnLearn);
 
-        // Set click listener to navigate to ExpenseHistoryActivity1
-        reminderButton.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), ExpenseHistoryActivity1.class);
-            startActivity(intent);
-        });
+        btnArmenia.setOnClickListener(v -> launchQuiz("armenia"));
+        btnProgramming.setOnClickListener(v -> launchQuiz("programming"));
+        btnGeneral.setOnClickListener(v -> launchQuiz("general"));
+        btnLearn.setOnClickListener(v -> startActivity(new Intent(getActivity(), LearnActivity.class)));
 
-        Button expenseButton = view.findViewById(R.id.Expense_button);
-
-        // Set click listener to navigate to ExpenseHistoryActivity
-        expenseButton.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), ExpenseHistoryActivity.class);
-            startActivity(intent);
-        });
         return view;
     }
+
+    private void launchQuiz(String category) {
+        Intent intent = new Intent(getActivity(), QuizActivity.class);
+        intent.putExtra("CATEGORY", category);
+        startActivity(intent);
+    }
 }
-
-
