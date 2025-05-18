@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "ru.samsung.myapp.test.app-mergeDebugAndroidTestResources-2:/values-v21/values-v21.xml",
+            "outputFile": "ru.samsung.myapp.test.app-mergeDebugAndroidTestResources-1:/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Aren\\.gradle\\caches\\8.9\\transforms\\93acbd16a77e0112b281a418a4855490\\transformed\\jetified-core-1.6.1\\res\\values-v21\\values.xml",
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\8.9\\transforms\\93acbd16a77e0112b281a418a4855490\\transformed\\jetified-core-1.6.1\\res\\values-v21\\values.xml",
                     "from": {
                         "startLines": "4,13",
                         "startColumns": "0,0",
