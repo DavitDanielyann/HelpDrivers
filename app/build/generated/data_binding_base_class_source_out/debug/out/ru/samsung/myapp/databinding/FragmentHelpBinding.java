@@ -4,10 +4,11 @@ package ru.samsung.myapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import java.lang.NullPointerException;
@@ -17,42 +18,24 @@ import ru.samsung.myapp.R;
 
 public final class FragmentHelpBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
-  public final TextView closingText;
+  public final ListView leaderboardList;
 
   @NonNull
-  public final TextView expenseDescriptionText;
+  public final TextView leaderboardTitle;
 
-  @NonNull
-  public final TextView expenseHistoryText;
-
-  @NonNull
-  public final TextView helpText;
-
-  @NonNull
-  public final TextView reminderDescriptionText;
-
-  @NonNull
-  public final TextView reminderText;
-
-  private FragmentHelpBinding(@NonNull ConstraintLayout rootView, @NonNull TextView closingText,
-      @NonNull TextView expenseDescriptionText, @NonNull TextView expenseHistoryText,
-      @NonNull TextView helpText, @NonNull TextView reminderDescriptionText,
-      @NonNull TextView reminderText) {
+  private FragmentHelpBinding(@NonNull LinearLayout rootView, @NonNull ListView leaderboardList,
+      @NonNull TextView leaderboardTitle) {
     this.rootView = rootView;
-    this.closingText = closingText;
-    this.expenseDescriptionText = expenseDescriptionText;
-    this.expenseHistoryText = expenseHistoryText;
-    this.helpText = helpText;
-    this.reminderDescriptionText = reminderDescriptionText;
-    this.reminderText = reminderText;
+    this.leaderboardList = leaderboardList;
+    this.leaderboardTitle = leaderboardTitle;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -77,45 +60,19 @@ public final class FragmentHelpBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.closingText;
-      TextView closingText = ViewBindings.findChildViewById(rootView, id);
-      if (closingText == null) {
+      id = R.id.leaderboardList;
+      ListView leaderboardList = ViewBindings.findChildViewById(rootView, id);
+      if (leaderboardList == null) {
         break missingId;
       }
 
-      id = R.id.expenseDescriptionText;
-      TextView expenseDescriptionText = ViewBindings.findChildViewById(rootView, id);
-      if (expenseDescriptionText == null) {
+      id = R.id.leaderboardTitle;
+      TextView leaderboardTitle = ViewBindings.findChildViewById(rootView, id);
+      if (leaderboardTitle == null) {
         break missingId;
       }
 
-      id = R.id.expenseHistoryText;
-      TextView expenseHistoryText = ViewBindings.findChildViewById(rootView, id);
-      if (expenseHistoryText == null) {
-        break missingId;
-      }
-
-      id = R.id.helpText;
-      TextView helpText = ViewBindings.findChildViewById(rootView, id);
-      if (helpText == null) {
-        break missingId;
-      }
-
-      id = R.id.reminderDescriptionText;
-      TextView reminderDescriptionText = ViewBindings.findChildViewById(rootView, id);
-      if (reminderDescriptionText == null) {
-        break missingId;
-      }
-
-      id = R.id.reminderText;
-      TextView reminderText = ViewBindings.findChildViewById(rootView, id);
-      if (reminderText == null) {
-        break missingId;
-      }
-
-      return new FragmentHelpBinding((ConstraintLayout) rootView, closingText,
-          expenseDescriptionText, expenseHistoryText, helpText, reminderDescriptionText,
-          reminderText);
+      return new FragmentHelpBinding((LinearLayout) rootView, leaderboardList, leaderboardTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -10,8 +10,8 @@
         android:icon="@drawable/about"/>
     <item
         android:id="@+id/help"
-        android:title="Help"
-        android:icon="@drawable/help"/>
+        android:title="Leaderboard"
+        android:icon="@drawable/leaderboard"/>
     <item
         android:id="@+id/contact"
         android:title="Account"

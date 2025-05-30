@@ -114,7 +114,7 @@
                 android:id="@+id/guest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Guest mode"
+                android:text="Test mode"
                 android:layout_marginTop="10dp"
                 android:padding="8dp"
                 android:textColor="@color/lavender"

@@ -14,7 +14,7 @@ import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
 
-    private TextView questionText, timerText;
+    private TextView questionText, timerText, questionCounterText;
     private Button[] optionButtons = new Button[4];
     private List<Question> questions;
     private int currentQuestionIndex = 0;
@@ -28,6 +28,8 @@ public class QuizActivity extends AppCompatActivity {
 
         questionText = findViewById(R.id.questionText);
         timerText = findViewById(R.id.timerText);
+        questionCounterText = findViewById(R.id.tvQuestionCounter); // ✅ նոր ավելացված
+
         optionButtons[0] = findViewById(R.id.option1);
         optionButtons[1] = findViewById(R.id.option2);
         optionButtons[2] = findViewById(R.id.option3);
@@ -41,15 +43,25 @@ public class QuizActivity extends AppCompatActivity {
 
     private void showQuestion() {
         resetButtonColors();
+
+        // ✅ Թարմացնենք հարցի համարը
+        questionCounterText.setText("Question " + (currentQuestionIndex + 1) + " of " + questions.size());
+
         if (currentQuestionIndex < questions.size()) {
             Question question = questions.get(currentQuestionIndex);
             questionText.setText(question.getQuestionText());
-            String[] options = {question.getOption1(), question.getOption2(), question.getOption3(), question.getOption4()};
+            String[] options = {
+                    question.getOption1(),
+                    question.getOption2(),
+                    question.getOption3(),
+                    question.getOption4()
+            };
 
             for (int i = 0; i < 4; i++) {
                 optionButtons[i].setText(options[i]);
                 int finalI = i;
-                optionButtons[i].setOnClickListener(v -> handleAnswer(optionButtons[finalI].getText().toString(), optionButtons[finalI], question));
+                optionButtons[i].setOnClickListener(v ->
+                        handleAnswer(optionButtons[finalI].getText().toString(), optionButtons[finalI], question));
             }
 
             startTimer();
@@ -69,10 +81,13 @@ public class QuizActivity extends AppCompatActivity {
             selectedButton.setBackgroundColor(Color.GREEN);
             score++;
         } else {
-            selectedButton.setBackgroundColor(Color.RED);
-            LearnStorage.addIncorrectAnswer(question); // Save incorrect answer
+            if (selectedButton != null) {
+                selectedButton.setBackgroundColor(Color.RED);
+            }
 
-            // Highlight correct one
+            LearnStorage.addIncorrectAnswer(question); // ⛔ Սխալ հարցի պահպանում
+
+            // Ճիշտ պատասխանի ընդգծում
             for (Button btn : optionButtons) {
                 if (btn.getText().equals(question.getCorrectAnswer())) {
                     btn.setBackgroundColor(Color.GREEN);

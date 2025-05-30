@@ -1395,6 +1395,7 @@ color button_material_dark
 color button_material_light
 color call_notification_answer_color
 color call_notification_decline_color
+color card_background
 color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
@@ -2117,6 +2118,7 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color primary
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -3094,6 +3096,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
 drawable indeterminate_static
 drawable lavender_border
+drawable leaderboard
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
 drawable m3_bottom_sheet_drag_handle
@@ -3287,11 +3290,8 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
-id btnArmenia
-id btnGeneral
 id btnGoHome
-id btnLearn
-id btnProgramming
+id btnNext
 id btnReview
 id btnSave
 id buttonPanel
@@ -3299,6 +3299,10 @@ id cache_measures
 id calendarView
 id callMeasure
 id cancel_button
+id cardArmenia
+id cardGeneral
+id cardLearn
+id cardProgramming
 id cardView
 id carryVelocity
 id center
@@ -3318,7 +3322,6 @@ id clip_horizontal
 id clip_vertical
 id clockwise
 id closest
-id closingText
 id collapseActionView
 id compress
 id confirm_button
@@ -3391,8 +3394,6 @@ id escape
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
-id expenseDescriptionText
-id expenseHistoryText
 id expenseTable
 id fade
 id fill
@@ -3417,13 +3418,13 @@ id ghost_view_holder
 id gone
 id graph
 id graph_wrap
+id gridLayout
 id group_divider
 id grouping
 id groups
 id guest
 id header_title
 id help
-id helpText
 id hide_ime_id
 id hideable
 id home
@@ -3451,6 +3452,8 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id leaderboardList
+id leaderboardTitle
 id learnLayout
 id left
 id leftToRight
@@ -3568,6 +3571,7 @@ id option1
 id option2
 id option3
 id option4
+id optionsCard
 id outline
 id outward
 id overshoot
@@ -3590,12 +3594,11 @@ id priceEditText
 id progressBar
 id progress_circular
 id progress_horizontal
+id questionCard
 id questionText
 id radio
 id ratio
 id rectangles
-id reminderDescriptionText
-id reminderText
 id report_drawn
 id resultText
 id reverseSawtooth
@@ -3707,12 +3710,14 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timerCard
 id timerText
 id title
 id titleDividerNoCustom
 id titleText
 id title_template
 id toggle
+id toolbar
 id top
 id topPanel
 id touch_outside
@@ -3727,6 +3732,9 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvQuestionCounter
+id tvSubtitle
+id tvTitle
 id unchecked
 id uniform
 id unlabeled

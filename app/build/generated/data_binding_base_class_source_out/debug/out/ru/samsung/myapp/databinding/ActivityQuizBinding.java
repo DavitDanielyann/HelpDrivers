@@ -5,12 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -18,7 +21,10 @@ import ru.samsung.myapp.R;
 
 public final class ActivityQuizBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final CoordinatorLayout rootView;
+
+  @NonNull
+  public final MaterialButton btnNext;
 
   @NonNull
   public final Button option1;
@@ -33,26 +39,50 @@ public final class ActivityQuizBinding implements ViewBinding {
   public final Button option4;
 
   @NonNull
+  public final MaterialCardView optionsCard;
+
+  @NonNull
+  public final MaterialCardView questionCard;
+
+  @NonNull
   public final TextView questionText;
+
+  @NonNull
+  public final MaterialCardView timerCard;
 
   @NonNull
   public final TextView timerText;
 
-  private ActivityQuizBinding(@NonNull LinearLayout rootView, @NonNull Button option1,
-      @NonNull Button option2, @NonNull Button option3, @NonNull Button option4,
-      @NonNull TextView questionText, @NonNull TextView timerText) {
+  @NonNull
+  public final Toolbar toolbar;
+
+  @NonNull
+  public final TextView tvQuestionCounter;
+
+  private ActivityQuizBinding(@NonNull CoordinatorLayout rootView, @NonNull MaterialButton btnNext,
+      @NonNull Button option1, @NonNull Button option2, @NonNull Button option3,
+      @NonNull Button option4, @NonNull MaterialCardView optionsCard,
+      @NonNull MaterialCardView questionCard, @NonNull TextView questionText,
+      @NonNull MaterialCardView timerCard, @NonNull TextView timerText, @NonNull Toolbar toolbar,
+      @NonNull TextView tvQuestionCounter) {
     this.rootView = rootView;
+    this.btnNext = btnNext;
     this.option1 = option1;
     this.option2 = option2;
     this.option3 = option3;
     this.option4 = option4;
+    this.optionsCard = optionsCard;
+    this.questionCard = questionCard;
     this.questionText = questionText;
+    this.timerCard = timerCard;
     this.timerText = timerText;
+    this.toolbar = toolbar;
+    this.tvQuestionCounter = tvQuestionCounter;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public CoordinatorLayout getRoot() {
     return rootView;
   }
 
@@ -77,6 +107,12 @@ public final class ActivityQuizBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnNext;
+      MaterialButton btnNext = ViewBindings.findChildViewById(rootView, id);
+      if (btnNext == null) {
+        break missingId;
+      }
+
       id = R.id.option1;
       Button option1 = ViewBindings.findChildViewById(rootView, id);
       if (option1 == null) {
@@ -101,9 +137,27 @@ public final class ActivityQuizBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.optionsCard;
+      MaterialCardView optionsCard = ViewBindings.findChildViewById(rootView, id);
+      if (optionsCard == null) {
+        break missingId;
+      }
+
+      id = R.id.questionCard;
+      MaterialCardView questionCard = ViewBindings.findChildViewById(rootView, id);
+      if (questionCard == null) {
+        break missingId;
+      }
+
       id = R.id.questionText;
       TextView questionText = ViewBindings.findChildViewById(rootView, id);
       if (questionText == null) {
+        break missingId;
+      }
+
+      id = R.id.timerCard;
+      MaterialCardView timerCard = ViewBindings.findChildViewById(rootView, id);
+      if (timerCard == null) {
         break missingId;
       }
 
@@ -113,8 +167,21 @@ public final class ActivityQuizBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityQuizBinding((LinearLayout) rootView, option1, option2, option3, option4,
-          questionText, timerText);
+      id = R.id.toolbar;
+      Toolbar toolbar = ViewBindings.findChildViewById(rootView, id);
+      if (toolbar == null) {
+        break missingId;
+      }
+
+      id = R.id.tvQuestionCounter;
+      TextView tvQuestionCounter = ViewBindings.findChildViewById(rootView, id);
+      if (tvQuestionCounter == null) {
+        break missingId;
+      }
+
+      return new ActivityQuizBinding((CoordinatorLayout) rootView, btnNext, option1, option2,
+          option3, option4, optionsCard, questionCard, questionText, timerCard, timerText, toolbar,
+          tvQuestionCounter);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

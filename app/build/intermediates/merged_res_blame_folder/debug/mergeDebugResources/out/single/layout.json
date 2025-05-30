@@ -44,16 +44,16 @@
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\layout\\activity_login.xml"
     },
     {
-        "merged": "ru.samsung.myapp-mergeDebugResources-4:/layout/fragment_about.xml",
-        "source": "ru.samsung.myapp-main-7:/layout/fragment_about.xml"
-    },
-    {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-mergeDebugResources-4:\\layout\\fragment_about.xml",
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\layout\\fragment_about.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-mergeDebugResources-4:\\layout\\activity_learn.xml",
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\layout\\activity_learn.xml"
+    },
+    {
+        "merged": "ru.samsung.myapp-mergeDebugResources-4:/layout/fragment_contact.xml",
+        "source": "ru.samsung.myapp-main-7:/layout/fragment_contact.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-mergeDebugResources-4:\\layout\\activity_inspection.xml",

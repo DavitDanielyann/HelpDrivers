@@ -4,12 +4,14 @@ package ru.samsung.myapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.GridLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -17,32 +19,46 @@ import ru.samsung.myapp.R;
 
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button btnArmenia;
+  public final MaterialCardView cardArmenia;
 
   @NonNull
-  public final Button btnGeneral;
+  public final MaterialCardView cardGeneral;
 
   @NonNull
-  public final Button btnLearn;
+  public final MaterialCardView cardLearn;
 
   @NonNull
-  public final Button btnProgramming;
+  public final MaterialCardView cardProgramming;
 
-  private FragmentHomeBinding(@NonNull LinearLayout rootView, @NonNull Button btnArmenia,
-      @NonNull Button btnGeneral, @NonNull Button btnLearn, @NonNull Button btnProgramming) {
+  @NonNull
+  public final GridLayout gridLayout;
+
+  @NonNull
+  public final TextView tvSubtitle;
+
+  @NonNull
+  public final TextView tvTitle;
+
+  private FragmentHomeBinding(@NonNull ConstraintLayout rootView,
+      @NonNull MaterialCardView cardArmenia, @NonNull MaterialCardView cardGeneral,
+      @NonNull MaterialCardView cardLearn, @NonNull MaterialCardView cardProgramming,
+      @NonNull GridLayout gridLayout, @NonNull TextView tvSubtitle, @NonNull TextView tvTitle) {
     this.rootView = rootView;
-    this.btnArmenia = btnArmenia;
-    this.btnGeneral = btnGeneral;
-    this.btnLearn = btnLearn;
-    this.btnProgramming = btnProgramming;
+    this.cardArmenia = cardArmenia;
+    this.cardGeneral = cardGeneral;
+    this.cardLearn = cardLearn;
+    this.cardProgramming = cardProgramming;
+    this.gridLayout = gridLayout;
+    this.tvSubtitle = tvSubtitle;
+    this.tvTitle = tvTitle;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -67,32 +83,50 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnArmenia;
-      Button btnArmenia = ViewBindings.findChildViewById(rootView, id);
-      if (btnArmenia == null) {
+      id = R.id.cardArmenia;
+      MaterialCardView cardArmenia = ViewBindings.findChildViewById(rootView, id);
+      if (cardArmenia == null) {
         break missingId;
       }
 
-      id = R.id.btnGeneral;
-      Button btnGeneral = ViewBindings.findChildViewById(rootView, id);
-      if (btnGeneral == null) {
+      id = R.id.cardGeneral;
+      MaterialCardView cardGeneral = ViewBindings.findChildViewById(rootView, id);
+      if (cardGeneral == null) {
         break missingId;
       }
 
-      id = R.id.btnLearn;
-      Button btnLearn = ViewBindings.findChildViewById(rootView, id);
-      if (btnLearn == null) {
+      id = R.id.cardLearn;
+      MaterialCardView cardLearn = ViewBindings.findChildViewById(rootView, id);
+      if (cardLearn == null) {
         break missingId;
       }
 
-      id = R.id.btnProgramming;
-      Button btnProgramming = ViewBindings.findChildViewById(rootView, id);
-      if (btnProgramming == null) {
+      id = R.id.cardProgramming;
+      MaterialCardView cardProgramming = ViewBindings.findChildViewById(rootView, id);
+      if (cardProgramming == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((LinearLayout) rootView, btnArmenia, btnGeneral, btnLearn,
-          btnProgramming);
+      id = R.id.gridLayout;
+      GridLayout gridLayout = ViewBindings.findChildViewById(rootView, id);
+      if (gridLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.tvSubtitle;
+      TextView tvSubtitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvSubtitle == null) {
+        break missingId;
+      }
+
+      id = R.id.tvTitle;
+      TextView tvTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvTitle == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((ConstraintLayout) rootView, cardArmenia, cardGeneral,
+          cardLearn, cardProgramming, gridLayout, tvSubtitle, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -36,12 +36,12 @@
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\layout\\activity_learn.xml"
     },
     {
-        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\drawable_home.xml.flat",
-        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\drawable\\home.xml"
-    },
-    {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\drawable_quiz.jpg.flat",
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\drawable\\quiz.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\drawable_home.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\drawable\\home.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\layout_fragment_about.xml.flat",
@@ -80,12 +80,12 @@
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\layout\\fragment_help.xml"
     },
     {
-        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\layout_fragment_contact.xml.flat",
-        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\layout\\fragment_contact.xml"
-    },
-    {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\layout_fragment_contact.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\layout\\fragment_contact.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\drawable_about.xml.flat",
@@ -110,6 +110,10 @@
     {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\menu_bottom_menu.xml.flat",
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\menu\\bottom_menu.xml"
+    },
+    {
+        "merged": "ru.samsung.myapp-debug-5:/layout_fragment_contact.xml.flat",
+        "source": "ru.samsung.myapp-main-7:/layout/fragment_contact.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\xml_backup_rules.xml.flat",
@@ -164,32 +168,32 @@
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\drawable\\car.jpg"
     },
     {
-        "merged": "ru.samsung.myapp-debug-5:/layout_fragment_about.xml.flat",
-        "source": "ru.samsung.myapp-main-7:/layout/fragment_about.xml"
-    },
-    {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\layout_activity_expense_history1.xml.flat",
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\layout\\activity_expense_history1.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\drawable_leaderboard.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\drawable\\leaderboard.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\mipmap-xxxhdpi\\ic_launcher.webp"
-    },
-    {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\mipmap-hdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-main-7:\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\8.9\\ru.samsung.myapp-debug-5:\\layout_activity_quiz.xml.flat",

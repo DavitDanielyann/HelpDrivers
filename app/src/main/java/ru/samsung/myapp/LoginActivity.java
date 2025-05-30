@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText login_email, login_password;
     Button login_button;
     TextView signupRedirectText;
-    TextView guest;
+    TextView testMode; // Renamed from guest
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
     private SharedPreferences sharedPreferences;
@@ -57,19 +57,16 @@ public class LoginActivity extends AppCompatActivity {
         login_password = findViewById(R.id.login_password);
         login_button = findViewById(R.id.login_button);
         signupRedirectText = findViewById(R.id.signupRedirectText);
-        guest = findViewById(R.id.guest);
+        testMode = findViewById(R.id.guest); // Keep the same ID in XML for reuse
         progressBar = findViewById(R.id.progressBar);
-        
-        // Initialize SharedPreferences
+
         sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
 
-        // When the login button is clicked
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Disable button to prevent multiple clicks
                 login_button.setEnabled(false);
-                
+
                 if (!checkConnectivity()) {
                     login_button.setEnabled(true);
                     return;
@@ -78,7 +75,6 @@ public class LoginActivity extends AppCompatActivity {
                 String email = login_email.getText().toString().trim();
                 String password = login_password.getText().toString().trim();
 
-                // Input validation
                 if (email.isEmpty()) {
                     login_email.setError("Email is required");
                     login_email.requestFocus();
@@ -112,7 +108,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        // Redirect to SignupActivity if user clicks on the signup link
         signupRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,35 +116,53 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        guest.setOnClickListener(new View.OnClickListener() {
+        // TEST MODE login logic
+        testMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                String testEmail = "individualproject2025@gmail.com";
+                String testPassword = "Samsung2025";
+
+                progressBar.setVisibility(View.VISIBLE);
+
+                mAuth.signInWithEmailAndPassword(testEmail, testPassword)
+                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                progressBar.setVisibility(View.GONE);
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(LoginActivity.this, "Test Mode Login Successful", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(intent);
+                                    finish();
+                                } else {
+                                    Toast.makeText(LoginActivity.this, "Test Mode Login Failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
             }
         });
     }
-    
+
     private boolean checkConnectivity() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager != null) {
             NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
             boolean isConnected = activeNetworkInfo != null && activeNetworkInfo.isConnected();
-            
+
             if (!isConnected) {
                 Toast.makeText(this, "No internet connection. Please check your network settings.", Toast.LENGTH_LONG).show();
                 Log.e(TAG, "No network connectivity");
                 return false;
             }
-            
-            // Test Firebase connectivity
+
             if (mAuth == null) {
                 Toast.makeText(this, "Error connecting to authentication service. Please restart the app.", Toast.LENGTH_LONG).show();
                 Log.e(TAG, "Firebase Auth is null");
                 return false;
             }
-            
+
             return true;
         }
         Toast.makeText(this, "Unable to check network connection. Please restart the app.", Toast.LENGTH_LONG).show();
@@ -159,59 +172,55 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loginUser(String email, String password) {
         Log.d(TAG, "Attempting to login with email: " + email);
-        
+
         mAuth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    progressBar.setVisibility(View.GONE);
-                    
-                    if (task.isSuccessful()) {
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        Log.d(TAG, "Login successful for user: " + email);
-                        
-                        if (user != null) {
-                            // Save email in shared preferences
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString("email", email);
-                            editor.apply();
-                            
-                            Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            startActivity(intent);
-                            finish();
-                        }
-                    } else {
-                        String errorMessage;
-                        Exception exception = task.getException();
-                        
-                        if (exception instanceof FirebaseNetworkException) {
-                            errorMessage = "Network error. Please check your internet connection and try again.";
-                            Log.e(TAG, "FirebaseNetworkException: " + exception.getMessage());
-                        } else if (exception != null) {
-                            errorMessage = exception.getMessage();
-                            Log.e(TAG, "Login failed: " + exception.getMessage());
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressBar.setVisibility(View.GONE);
+
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            Log.d(TAG, "Login successful for user: " + email);
+
+                            if (user != null) {
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("email", email);
+                                editor.apply();
+
+                                Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                                finish();
+                            }
                         } else {
-                            errorMessage = "Authentication failed";
-                            Log.e(TAG, "Login failed with no exception");
+                            String errorMessage;
+                            Exception exception = task.getException();
+
+                            if (exception instanceof FirebaseNetworkException) {
+                                errorMessage = "Network error. Please check your internet connection and try again.";
+                                Log.e(TAG, "FirebaseNetworkException: " + exception.getMessage());
+                            } else if (exception != null) {
+                                errorMessage = exception.getMessage();
+                                Log.e(TAG, "Login failed: " + exception.getMessage());
+                            } else {
+                                errorMessage = "Authentication failed";
+                                Log.e(TAG, "Login failed with no exception");
+                            }
+                            Toast.makeText(LoginActivity.this, errorMessage, Toast.LENGTH_LONG).show();
                         }
-                        Toast.makeText(LoginActivity.this, errorMessage, Toast.LENGTH_LONG).show();
+                        login_button.setEnabled(true);
                     }
-                    // Always re-enable the login button
-                    login_button.setEnabled(true);
-                }
-            });
+                });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        // Reset UI state
         login_button.setEnabled(true);
         progressBar.setVisibility(View.GONE);
-        
-        // Check Firebase initialization
+
         if (mAuth == null) {
             try {
                 FirebaseApp.initializeApp(this);

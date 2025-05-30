@@ -15,9 +15,11 @@
         <item>December</item>
     </string-array>
     <color name="black">#FF000000</color>
+    <color name="card_background">#FFFFFF</color>
     <color name="grey">#c3c7c4</color>
-    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="ic_launcher_background">#190808</color>
     <color name="lavender">#8692f7</color>
+    <color name="primary">#2196F3</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -38,7 +40,7 @@
         
     </style>
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication"/>
-    <style name="Theme.Myapp" parent="Theme.MaterialComponents.DayNight.NoActionBar" ns1:ignore="DuplicateDefinition">
+    <style name="Theme.Myapp" ns1:ignore="DuplicateDefinition" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
 
     </style>
